@@ -11,7 +11,7 @@ sudo reboot
 For Quicksight Setup
 ```
 sudo su -
-curl https://raw.githubusercontent.com/celenksercan/K8S-Full/Kubeadm/1-Kubernetes-Install/k8s.sh | bash -
+curl https://raw.githubusercontent.com/celenksercan/K8S-Full/main/Kubeadm/1-Kubernetes-Install/k8s.sh | bash -
 
 ```
 
@@ -61,7 +61,7 @@ free -h
 For Quicksight Swap-Disable
 ``` bash
 sudo su -
-curl https://raw.githubusercontent.com/celenksercan/K8S-Full/Kubeadm/1-Kubernetes-Install/swap-disable.sh | bash -
+curl https://raw.githubusercontent.com/celenksercan/K8S-Full/main/Kubeadm/1-Kubernetes-Install/swap-disable.sh | bash -
 
 ```
 
