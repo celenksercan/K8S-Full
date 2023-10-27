@@ -28,7 +28,7 @@ kubectl get services
 
 # Checking via browser
 curl node_ip:node_port
-curl http://192.168.1.7:32425
+curl http://CLUSTER-IP:32425
 
 ```
 
