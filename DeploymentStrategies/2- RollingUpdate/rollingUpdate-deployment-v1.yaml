@@ -1,49 +1,26 @@
-##################################################
-# RollingUpdate Deployment V1 - Manifest
-##################################################
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  roolingupdate-dep
+  name: sercan
   namespace: default
-  labels:
-    app:  roolingupdate
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: roolingupdate
-  replicas: 8
+      app: sercan
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 25%
-      maxUnavailable: 50%
+      maxUnavailable: 50%    
   template:
     metadata:
       labels:
-        app:  roolingupdate
+        app: sercan
     spec:
       containers:
-      - name:  roolingupdate
-        image:  nginx:1.14.2
-        resources:
-          requests:
-            cpu: 100m
-            memory: 100Mi
-          limits:
-            cpu: 100m
-            memory: 100Mi
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 5000
-          initialDelaySeconds: 5
-          timeoutSeconds: 2
-          successThreshold: 1
-          failureThreshold: 3
-          periodSeconds: 10
+      - image: gcr.io/google-samples/hello-app:1.0
+        imagePullPolicy: Always
+        name: sercan
         ports:
-        - containerPort:  80
-          name:  roolingupdate
-      restartPolicy: Always
----
+        - containerPort: 8080
