@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name:  roolingupdate
-        image:  denizturkmen/app1
+        image:  nginx:1.14.2
         resources:
           requests:
             cpu: 100m
