@@ -4,15 +4,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: roolingupdate-test
+  name: sercan-rolling-testing
   namespace: default
 spec:
   selector:
     app: roolingupdate
   type: NodePort
   ports:
-  - name: roolingupdate-dep-test
+  - name: sercan-rolling-testing
     protocol: TCP
     port: 80
     targetPort: 5000 
-    nodePort: 32425
+    nodePort: 3000
