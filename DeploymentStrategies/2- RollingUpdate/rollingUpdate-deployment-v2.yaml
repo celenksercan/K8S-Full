@@ -1,26 +1,32 @@
-apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sercan
   namespace: default
 spec:
   replicas: 2
-  selector:
-    matchLabels:
-      app: sercan
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 50%    
+      maxSurge: 1
+      maxUnavailable: 25%
+  selector:
+    matchLabels:
+      app: sercan
   template:
     metadata:
       labels:
         app: sercan
     spec:
       containers:
-      - image: gcr.io/google-samples/hello-app:2.0
-        imagePullPolicy: Always
-        name: sercan
-        ports:
-        - containerPort: 8080
+        - name: sercan
+          image: gcr.io/google-samples/hello-app:2.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            successThreshold: 1
