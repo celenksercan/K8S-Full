@@ -8,8 +8,8 @@ metadata:
   namespace: default
 data:
   index.html: |
-    <style>html,body{display:flex;align-items:center;justify-content:center;font-size:25vh}</style>
-    version_2
+    sercancelenk.com
+    ab deployment v2
 ---
 ##################################################
 # A&B Testing Deployment V2 - Manifest
