@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: ingress.sercancelenk.com
+  - host: ingress1.sercancelenk.com
     http:
       paths:
       - backend:
