@@ -17,7 +17,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-version-1
+  name: sercan-v1
   namespace: default
   labels:
     app: v1
@@ -88,7 +88,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-svc-v1
+  name: sercan-svc-v1
   namespace: default
   labels:
     app: v1
