@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: sercan-app
-        image: denizturkmen/rollingupdatev2:latest
+        image: nginx:1.15.12
         imagePullPolicy: IfNotPresent
         resources:
           requests:
