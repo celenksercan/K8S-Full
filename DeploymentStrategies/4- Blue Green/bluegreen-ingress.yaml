@@ -1,13 +1,11 @@
-##################################################
-# BlueGree Ingress - Manifest
-##################################################
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ing-blue-green
   namespace: default
   labels:
-    app: web-app
+    app: sercan-app
     strategies: blue
 spec:
   ingressClassName: nginx
@@ -17,7 +15,7 @@ spec:
       paths:
       - backend:
           service:
-            name: web-svc
+            name: sercan-svc
             port:
               number: 80
         path: /
