@@ -1,17 +1,14 @@
-##################################################
-# BlueGree Deployment V2 - Manifest
-##################################################
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-app-2
+  name: sercan-app-2
   namespace: default
   labels:
-    app: web-app
+    app: sercan-app
 spec:
   selector:
     matchLabels:
-      app: web-app
+      app: sercan-app
       strategies: green
   replicas: 1
   strategy:
@@ -22,11 +19,11 @@ spec:
   template:
     metadata:
       labels:
-        app: web-app
+        app: sercan-app
         strategies: green
     spec:
       containers:
-      - name: web-app
+      - name: sercan-app
         image: denizturkmen/rollingupdatev2:latest
         imagePullPolicy: IfNotPresent
         resources:
@@ -55,6 +52,6 @@ spec:
           periodSeconds: 10
         ports:
         - containerPort: 80
-          name: web-app
+          name: sercan-app
       restartPolicy: Always
 
